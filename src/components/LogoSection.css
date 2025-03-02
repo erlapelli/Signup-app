@@ -1,0 +1,13 @@
+.logo-section {
+    background-color: #6c47ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 5px;
+  }
+  
+  .logo-section img {
+    max-width: 250px;
+  }
+  

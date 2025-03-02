@@ -1,0 +1,19 @@
+.bg-purple {
+    background-color: #6c5ce7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .container {
+    min-height: 100vh;
+  }
+  
+  @media (max-width: 768px) {
+    .bg-purple {
+      display: none;
+    }
+  }
+  

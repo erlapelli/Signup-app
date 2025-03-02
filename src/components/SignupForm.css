@@ -1,0 +1,62 @@
+.signup-form-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+  }
+  
+  .signup-form-container h2 {
+    font-weight: bold;
+  }
+  
+  .signup-form-container .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .signup-form-container .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    background: #6c47ff;
+    border: none;
+  }
+  
+  .google-signup {
+    width: 100%;
+    background: #f1f1f1;
+    border: none;
+    margin-top: 10px;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+
+  .google-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  
