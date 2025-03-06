@@ -33,6 +33,7 @@ const SignupForm = () => {
 
     setLoading(true);
     setMessage("");
+    
 
 
     try {
@@ -74,6 +75,7 @@ const SignupForm = () => {
     <div className="signup-form-container">
       <h2>Sign Up</h2>
       <p>Fill the form below to create your account</p>
+      {message && <p className="message">{message}</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Full Name</label>

@@ -58,5 +58,13 @@
     height: 20px;
     margin-right: 10px;
   }
+  .message {
+    text-align: center;
+    font-size: 5px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
   
   
