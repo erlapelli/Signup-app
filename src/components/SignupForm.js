@@ -10,6 +10,8 @@ const SignupForm = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading,setLoading] = useState(false);
+  const [message,setMessage] = useState("");
 
   const validate = () => {
     let newErrors = {};
@@ -24,11 +26,47 @@ const SignupForm = () => {
 
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      alert("Form Submitted Successfully!");
+
+    if(!validate()) return;
+
+    setLoading(true);
+    setMessage("");
+
+
+    try {
+
+      const response = await fetch("https://back-folder.onrender.com/api/auth/register",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+        },
+
+        body:JSON.stringify(formData),
+
+
+      });
+
+      const data = await response.json();
+
+      if(response.status === 201) {
+        alert("Signup successful")
+        setFormData({fullName:"",email:"",password:"",confirmPassword:""});
+
+      }
+      else {
+        setMessage(data.message || "Signup failed please try again.");
+      }
+
+
+
+    } catch(error){
+      setMessage("An error occurred.please try again later.")
+    } finally {
+      setLoading(false);
     }
+
   };
 
 
@@ -69,7 +107,11 @@ const SignupForm = () => {
           {errors.confirmPassword && <span className="error">{errors.confirmPassword}</span>}
         </div>
 
-        <button type="submit" className="btn btn-primary">Sign Up</button>
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+          {loading ? "Signing Up..." : "Sign Up"}
+
+        </button>
+
       </form>
 
       <button className="google-signup">
